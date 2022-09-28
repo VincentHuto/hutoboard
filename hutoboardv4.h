@@ -17,7 +17,11 @@
 #pragma once
 
 #include "quantum.h"
-
+#define BONGO_ENABLE
+enum oled_modes {
+  OLED_BONGO,
+  OLED_BONGO_MIN
+};
 
 #define LAYOUT_5x8( \
     L00, L01, L02, L03, L04, L05, L06, L07, \

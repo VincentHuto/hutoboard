@@ -1,15 +1,15 @@
 # MCU name
 MCU = atmega32u4
-
+LTO_ENABLE = yes
 # Bootloader selection
 BOOTLOADER = caterina
-#OLED_ENABLE = yes
-#OLED_DRIVER = SSD1306
+
 SPLIT_KEYBOARD = yes
-CONSOLE_ENABLE = yes         # Console for debug
-COMMAND_ENABLE = yes        # Commands for debug and configuration
 UNICODE_ENABLE = yes
 
+OLED_ENABLE = yes
+OLED_DRIVER_ENABLE = yes
+OLED_DRIVER = SSD1306
+WPM_ENABLE = yes
 
-# Build options
-#SRC += status.c
+MAGIC_ENABLE = no
