@@ -18,6 +18,7 @@
 
 #include "quantum.h"
 #define BONGO_ENABLE
+
 enum oled_modes {
   OLED_BONGO,
   OLED_BONGO_MIN
