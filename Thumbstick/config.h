@@ -14,18 +14,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #pragma once
-#define MASTER_RIGHT
-#define SOFT_SERIAL_PIN D2
-/* key matrix size */
-// Rows are doubled-up
-#define MATRIX_ROWS 10
-#define MATRIX_COLS 8
+#include "config_common.h"
 
-// wiring of each half
-#define MATRIX_ROW_PINS { B3,B1, F7, F6, F5}
-#define MATRIX_COL_PINS { D4, C6, D7, F4, B4, B5, B6, B2 }
 
-#define DIODE_DIRECTION COL2ROW
+#define THUMBSTICK_DEBUG
 
-#define NO_ACTION_TAPPING	
-#define NO_ACTION_ONESHOT	
+#define IGNORE_MOD_TAP_INTERRUPT
+
+
+#ifdef THUMBSTICK_ENABLE
+    #define THUMBSTICK_FLIP_X
+    #define ANALOG_JOYSTICK_X_AXIS_PIN  B1
+    #define ANALOG_JOYSTICK_Y_AXIS_PIN F6
+#endif
