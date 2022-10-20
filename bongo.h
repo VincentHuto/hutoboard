@@ -207,4 +207,22 @@ static void draw_bongo(bool minimal)
         oled_set_cursor(0, 0);
         sprintf(wpm, "WPM:%03d", get_current_wpm());
         oled_write(wpm, false);
+
+        oled_set_cursor(0, 1);
+
+    led_t led_state = host_keyboard_led_state();
+    oled_write_P(led_state.num_lock ? PSTR("NUM ") : PSTR("    "), false);
+    oled_write_P(led_state.caps_lock ? PSTR("CAP ") : PSTR("    "), false);
+
+
+    oled_set_cursor(0, 2);
+    char lyrst[42];
+    sprintf(lyrst, "LYR:%03d",layer_state/2 );
+    oled_write(lyrst,false);
+     oled_set_cursor(0, 3);
+    char lyrnm[10];
+    sprintf(lyrnm, layer_state/2 == 0 ? "DEF" :layer_state/2 == 1 ? "FUN" : layer_state/2 == 2 ? "SPC" : "" );
+    oled_write(lyrnm,false);
+
+
 }
